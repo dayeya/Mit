@@ -9,23 +9,23 @@ type vertex struct {
 }
 
 type graph struct {
-	vertecies_amount int
+	verteciesAmount int
 	vertecies        []vertex
 }
 
-func create_vertex(value int) vertex {
+func createVertex(value int) vertex {
 	v := vertex{value: value, visited: false}
 	return v
 }
 
-func new_graph(vertecies_amount int) graph {
-	vertecies := make([]vertex, 0, vertecies_amount)
-	for i := 0; i < vertecies_amount; i++ {
-		vertecies = append(vertecies, create_vertex(i))
+func newGraph(verteciesAmount int) graph {
+	vertecies := make([]vertex, 0, verteciesAmount)
+	for i := 0; i < verteciesAmount; i++ {
+		vertecies = append(vertecies, createVertex(i))
 	}
 
 	return graph{
-		vertecies_amount: vertecies_amount,
+		verteciesAmount: verteciesAmount,
 		vertecies:        vertecies,
 	}
 }
@@ -41,7 +41,7 @@ func dfs(v *vertex) {
 	}
 }
 
-func dfs_graph(g graph) {
+func dfsGraph(g graph) {
 	for _, v := range g.vertecies {
 		if !v.visited {
 			dfs(&v)

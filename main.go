@@ -10,7 +10,8 @@ func main() {
 	arr = mergeSort(arr)
 	fmt.Println(arr)
 
-	g := new_graph(3)
-	dfs_graph(g)
+	g := newGraph(3)
+
+	dfsGraph(g)
 	fmt.Println()
 }
